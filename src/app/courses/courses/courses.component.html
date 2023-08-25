@@ -13,13 +13,32 @@
       <ng-container matColumnDef="category">
         <th mat-header-cell *matHeaderCellDef>Categoria</th>
         <td mat-cell *matCellDef="let course">{{ course.category }}
-          <mat-icon aria-hidden="false" aria-label="Categoria do Cursos">{{ course.category | category }}</mat-icon>
+          <mat-icon aria-hidden="false" aria-label="Categoria do Cursos" class="icon-category">{{ course.category | category }}</mat-icon>
+          <button mat-mini-fab color="warn" (click)="deletarCourses(course)" aria-label="Example icon button with a delete icon" class="ButtonDelete">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-button class="button-edit" (click)="selecionarCourse(course)">Editar</button>
         </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
+
+
+  <mat-toolbar color="primary">Adicionar Curso</mat-toolbar>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Curso</mat-label>
+        <input matInput placeholder="Digite o nome curso" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Categoria</mat-label>
+        <input matInput placeholder="Digite a categoria" [(ngModel)]="category" [ngModelOptions]="{standalone: true}">
+      </mat-form-field> <div class="example-button-row">
+        <button mat-button color="primary" (click)="salvarCurso()">Salvar</button>
+      </div>
+  </form>
   </div>
 
   <ng-template #loading>
@@ -27,4 +46,5 @@
       <mat-spinner></mat-spinner>
     </div>
   </ng-template>
+
 </mat-card>
