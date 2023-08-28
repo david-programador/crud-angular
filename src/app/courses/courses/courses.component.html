@@ -17,7 +17,9 @@
           <button mat-mini-fab color="warn" (click)="deletarCourses(course)" aria-label="Example icon button with a delete icon" class="ButtonDelete">
             <mat-icon>delete</mat-icon>
           </button>
+          <a routerLink="/course/update/{{ course._id }}">
           <button mat-button class="button-edit" (click)="selecionarCourse(course)">Editar</button>
+          </a>
         </td>
       </ng-container>
 
