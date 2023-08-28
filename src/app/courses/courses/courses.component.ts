@@ -16,15 +16,10 @@ import { CoursesService } from './../services/courses.service';
 export class CoursesComponent implements OnInit {
 
   id!: string;
-  course!: Course;
-  rota: string = '';
-
   name: string = '';
   category: string = '';
 
-
   courses$: Observable<Course[]>;
-  //courses: Course[] = [];
   displayedColumns = ['name','category'];
 
   constructor(
@@ -49,8 +44,6 @@ export class CoursesComponent implements OnInit {
       name: this.name,
       category: this.category
     }
-    console.log(cursoAdiciona);
-
     this.coursesService.salvar(cursoAdiciona).subscribe(response => {
       console.log(response)
     })

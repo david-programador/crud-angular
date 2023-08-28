@@ -27,8 +27,10 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
+    </div>
+  </mat-card>
 
-
+  <mat-card>
   <mat-toolbar color="primary">Adicionar Curso</mat-toolbar>
     <form class="example-form">
       <mat-form-field class="example-full-width">
@@ -42,7 +44,6 @@
         <button mat-button color="primary" (click)="salvarCurso()">Salvar</button>
       </div>
   </form>
-  </div>
 
   <ng-template #loading>
     <div class="loading-spinner">

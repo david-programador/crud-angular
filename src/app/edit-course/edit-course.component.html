@@ -3,11 +3,11 @@
     <form class="example-form">
       <mat-form-field class="example-full-width">
         <mat-label>Curso</mat-label>
-        <input matInput placeholder="Digite o nome curso" [(ngModel)]="course.name" [ngModelOptions]="{standalone: true}">
+        <input matInput placeholder="Digite o nome curso" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Categoria</mat-label>
-        <input matInput placeholder="Digite a categoria" [(ngModel)]="course.category" [ngModelOptions]="{standalone: true}">
+        <input matInput placeholder="Digite a categoria" [(ngModel)]="category" [ngModelOptions]="{standalone: true}">
 
       </mat-form-field> <div class="example-button-row">
         <button mat-raised-button (click)="cancel()">Cancelar</button>

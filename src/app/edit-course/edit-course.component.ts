@@ -11,8 +11,8 @@ import { Course } from '../courses/model/course';
 export class EditCourseComponent implements OnInit {
 
   id!: string;
-  course!: Course;
-
+  name!: string;
+  category!: string;
 
   constructor(private coursesService: CoursesService,
     private router: Router,
@@ -25,8 +25,8 @@ export class EditCourseComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.url[2].path;
 
     this.coursesService.chamarPeloCoursesById(this.id).subscribe((course: Course) => {
-      this.course = course;
-
+      this.name = course.name;
+      this.category = course.category;
 
     });
   }
@@ -42,8 +42,8 @@ selecionarCourse(course: Course){
 atualizarCurso() {
   const curso: Course = {
     _id: this.id,
-    name: this.course.name,
-    category: this.course.category
+    name: this.name,
+    category: this.category
   }
   console.log(curso);
 
