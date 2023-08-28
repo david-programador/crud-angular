@@ -14,10 +14,6 @@ export class CoursesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getCourses(): Observable<Course>{
-    return this.httpClient.get<Course>(`${this.API}`);
-  }
-
   getCoursesById(id: string): Observable<Course>{
     return this.httpClient.get<Course>(`${this.API}${id}`);
   }
@@ -33,10 +29,6 @@ export class CoursesService {
 
   salvar(record: Course): Observable<any> {
     return this.httpClient.post<Course>(this.API+"/add", record);
-  }
-
-  save(record: Course) {
-    this.httpClient.post<Course>(this.API, record);
   }
 
   excluirCourse(id: string): Observable<any>{

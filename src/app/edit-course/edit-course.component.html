@@ -1,4 +1,4 @@
-
+<mat-card>
 <mat-toolbar color="primary" id="titulo">Editar Curso</mat-toolbar>
     <form class="example-form">
       <mat-form-field class="example-full-width">
@@ -8,8 +8,11 @@
       <mat-form-field class="example-full-width">
         <mat-label>Categoria</mat-label>
         <input matInput placeholder="Digite a categoria" [(ngModel)]="course.category" [ngModelOptions]="{standalone: true}">
+
       </mat-form-field> <div class="example-button-row">
-        <button mat-raised-button	 (click)="salvarCurso()">Salvar</button>
-     <!--   <button mat-button color="primary" (click)="cancel()">Cancelar</button>-->
+        <button mat-raised-button (click)="cancel()">Cancelar</button>
+        <button mat-raised-button	color="primary" (click)="atualizarCurso()">Salvar</button>
+
       </div>
   </form>
+</mat-card>

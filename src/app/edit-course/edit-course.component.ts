@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../courses/services/courses.service';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from '../courses/model/course';
 
 @Component({
@@ -30,11 +30,8 @@ export class EditCourseComponent implements OnInit {
 
     });
   }
-
-  updateCourse(): void {}
-
-  cancel(): void {
-    this.router.navigate(['/courses/'])
+  cancel() {
+    this.router.navigate([''])
   }
 selecionarCourse(course: Course){
   this.coursesService.chamarPeloCoursesById(course._id)
@@ -42,15 +39,15 @@ selecionarCourse(course: Course){
 
   });
 }
-salvarCurso() {
-  const cursoAdiciona: Course = {
+atualizarCurso() {
+  const curso: Course = {
     _id: this.id,
     name: this.course.name,
     category: this.course.category
   }
-  console.log(cursoAdiciona);
+  console.log(curso);
 
-  this.coursesService.atualizarCourse(cursoAdiciona).subscribe(response => {
+  this.coursesService.atualizarCourse(curso).subscribe(response => {
     console.log(response)
   })
 
