@@ -4,9 +4,9 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Course } from '../courses/model/course';
 
 @Component({
-  selector: 'app-edit-course',
+  selector: 'app-courses',
   templateUrl: './edit-course.component.html',
-  styleUrls: ['./edit-course.component.scss']
+  styleUrls: ['./edit-course.component.scss'],
 })
 export class EditCourseComponent implements OnInit {
 
